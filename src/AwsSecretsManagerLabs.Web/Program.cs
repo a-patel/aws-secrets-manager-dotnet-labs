@@ -15,9 +15,18 @@ namespace AwsSecretsManagerLabs.Web
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureAppConfiguration(builder =>
+                .ConfigureAppConfiguration((hostingContext, config) =>
                 {
-                    builder.AddSecretsManager();
+                    if (!hostingContext.HostingEnvironment.IsDevelopment())
+                    {
+                        // Don't add AWS secrets in local environment
+                        //config.AddSecretsManager();
+                        config.AddSecretsManager(configurator: opts =>
+                        {
+                            // Replace __ tokens in the configuration key name
+                            opts.KeyGenerator = (secret, name) => name.Replace("__", ":");
+                        });
+                    }
                 })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
