@@ -41,4 +41,7 @@ namespace AwsSecretsManagerLabs.Web
 //https://github.com/Kralizek/AWSSecretsManagerConfigurationExtensions
 //https://andrewlock.net/secure-secrets-storage-for-asp-net-core-with-aws-secrets-manager-part-1/
 //https://andrewlock.net/secure-secrets-storage-for-asp-net-core-with-aws-secrets-manager-part-2/
+//https://aws.amazon.com/blogs/security/how-to-use-aws-secrets-manager-client-side-caching-in-dotnet/
+//https://www.codeproject.com/Articles/1279555/Access-AWS-Secrets-Manager-via-NET-CORE
+//https://medium.com/@jonvines/using-aws-secrets-manager-with-dotnet-core-a44b54bba8d4
 #endregion
